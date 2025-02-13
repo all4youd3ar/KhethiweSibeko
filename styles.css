@@ -1,0 +1,127 @@
+body {
+    font-family: 'Brush Script MT', cursive;
+    background: #ffdde1;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.cover {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ff6b6b;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+h1 {
+    color: #ff6b6b;
+    font-size: 3em;
+    margin: 20px 0;
+}
+
+.message {
+    font-size: 1.5em;
+    color: #555;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.question-page {
+    display: none;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+button {
+    font-size: 1.5em;
+    padding: 15px 40px;
+    margin: 0 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#yesBtn {
+    background: #ff6b6b;
+    color: white;
+}
+
+#noBtn {
+    background: #ddd;
+    color: #666;
+    position: relative;
+}
+
+.rose {
+    width: 150px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+.hidden {
+    display: none;
+}
+
+#special-picture {
+    /* Set up the image styling */
+    width: 300px;
+    height: auto;
+    transition: opacity 2s ease-in-out;
+}
+
+.flowers, .confetti {
+    /* Styling for flowers and confetti */
+    position: absolute;
+    /* Add your specific styles and animations for flowers and confetti here */
+}
+.fade-in {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+.fade-in.visible {
+    opacity: 1;
+}
+.timeline-event {
+    border-left: 2px solid #ff6b6b;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+.result-page {
+    background: linear-gradient(135deg, #f06292, #f48fb1);
+    color: white;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+/* Zoom-In Animation */
+@keyframes zoomIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.couple-photo {
+    animation: zoomIn 1s forwards;
+}
+.buttons {
+    margin-top: 30px;
+    position: relative; /* This allows the button to move within this container */
+}
+
+#noBtn {
+    background: #ddd;
+    color: #666;
+    /* Remove position: relative; or any other positioning here */
+}
