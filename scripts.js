@@ -1,60 +1,11 @@
-// scripts.js
 
+// Show question page
 function showQuestion() {
     document.querySelector('.cover').style.display = 'none';
     document.querySelector('.question-page').style.display = 'block';
 }
 
-function celebrate() {
-    confetti({
-        particleCount: 150,
-        spread: 60,
-        origin: { y: 0.6 }
-    });
-    alert("You just made my day! ❤️");
-}
-
-function moveNoButton() {
-    const noBtn = document.getElementById('noBtn');
-    const x = Math.floor(Math.random() * (window.innerWidth - noBtn.offsetWidth));
-    const y = Math.floor(Math.random() * (window.innerHeight - noBtn.offsetHeight));
-    noBtn.style.left = `${x}px`;
-    noBtn.style.top = `${y}px`;
-}
-
-function showResponse() {
-    document.getElementById("response").classList.remove("hidden");
-    document.getElementById("special-picture").style.opacity = 1;
-    // Here you can add animations for flowers and confetti
-}
-
-function celebrate() {
-    // Confetti
-    confetti({
-        particleCount: 150,
-        spread: 60,
-        origin: { y: 0.6 }
-    });
-    // Hide question page
-    document.querySelector('.question-page').style.display = 'none';
-    // Show personal message
-    const messageDiv = document.getElementById('personalMessage');
-    messageDiv.classList.add('fade-in');
-    messageDiv.classList.add('visible');
-    // Play music
-    document.getElementById('loveSong').play();
-    // Display bouquet after a delay
-    setTimeout(() => {
-        document.getElementById('virtualGift').classList.remove('hidden');
-    }, 2000);
-}
-
-function celebrate() {
-    // Existing confetti code
-    document.querySelector('.question-page').style.display = 'none';
-    document.getElementById('memoryTimeline').classList.remove('hidden');
-}
-
+// Celebrate when "Yes" is chosen
 function celebrate() {
     // Confetti effect
     confetti({
@@ -71,54 +22,17 @@ function celebrate() {
     document.querySelector('#resultPage h2').textContent = "I'm so happy you said yes!";
 }
 
+// Show crying emojis when "Maybe Later" is chosen
 function maybeLater() {
-    // Hide question page and show result page
+    // Hide question page and show crying overlay
     document.querySelector('.question-page').style.display = 'none';
-    document.getElementById('resultPage').classList.remove('hidden');
+    document.getElementById('cryingOverlay').classList.remove('hidden');
 
-    // Update the message
-    document.querySelector('#resultPage h2').textContent = "That's okay, maybe another time!";
+    // Stop the confetti
+    window.confetti = null;
 }
 
-function showQuestion() {
-    document.querySelector('.cover').style.display = 'none';
-    document.querySelector('.question-page').style.display = 'block';
-}
-
-function celebrate() {
-    // Confetti effect
-    confetti({
-        particleCount: 150,
-        spread: 60,
-        origin: { y: 0.6 }
-    });
-
-    // Hide question page and show result page
-    document.querySelector('.question-page').style.display = 'none';
-    document.getElementById('resultPage').classList.remove('hidden');
-
-    // Update the message
-    document.querySelector('#resultPage h2').textContent = "I'm so happy you said yes!";
-}
-// scripts.js
-
-
-function celebrate() {
-    // Confetti effect
-    confetti({
-        particleCount: 150,
-        spread: 60,
-        origin: { y: 0.6 }
-    });
-
-    // Hide question page and show result page
-    document.querySelector('.question-page').style.display = 'none';
-    document.getElementById('resultPage').classList.remove('hidden');
-
-    // Update the message
-    document.querySelector('#resultPage h2').textContent = "I'm so happy you said yes!";
-}
-
+// Move the "Maybe Later" button to a random position
 function moveNoButton() {
     const noBtn = document.getElementById('noBtn');
     const buttonsDiv = document.querySelector('.buttons');
@@ -144,10 +58,8 @@ function moveNoButton() {
     noBtn.style.top = randY + 'px';
 }
 
-// Prevent the "Maybe Later" button from being clicked
-noBtn.addEventListener('click', function(event) {
+// Prevent the "Maybe Later" button from being clicked by moving it
+document.getElementById('noBtn').addEventListener('click', function(event) {
     event.preventDefault();
     moveNoButton();
 });
-
-
