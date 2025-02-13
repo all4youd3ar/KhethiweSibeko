@@ -121,6 +121,29 @@ button {
 }
 
 #noBtn {
+    .crying-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    color: #ff6b6b;
+    z-index: 1000;
+    animation: fadeIn 2s forwards;
+}
+
+.crying-message {
+    font-size: 2em;
+    color: white;
+    margin-top: 20px;
+}
+
     background: #ddd;
     color: #666;
     /* Remove position: relative; or any other positioning here */
